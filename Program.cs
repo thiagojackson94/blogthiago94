@@ -12,17 +12,19 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
-app.UseAuthentication();
-app.UseAuthorization();
-app.MapControllers();
-app.UseStaticFiles();
-app.UseResponseCompression();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+//app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+//app.UseStaticFiles();
+//app.UseResponseCompression();
+
+
 
 app.Run();
